@@ -1,105 +1,159 @@
-
-/* page background */
-body {
-    background-color: #b9d9e3;     /* */
-    margin: 12px;
-    color: #000;
+* {
+  box-sizing: border-box;
 }
 
-/* top header */
-h1 {
-    text-align: center;
-    font-size: 64px;
-    font-weight: 800;
-    margin: 10px 0 10px 0;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-/* section headers */
-h2 {
-    font-size: 28px;
-    font-weight: 800;
-    margin: 12px 0 8px 0;
+/* layout*/
+:root {
+  --jump-width: 15%;
+  --header-height: 120px;
 }
 
-h3 {
+/* left jump menu */
+#jumpMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
 
-    font-size: 18px;
-    font-weight: 800;
-    margin: 14px 0 6px 0;
-}
+  width: var(--jump-width);
+  height: 100vh;
 
-/* spacing */
-p {
-    font-size: 14px;
-    line-height: 1.2;
-    margin: 10px 0;
-}
-
-/* boxd green paragraph */
-#paragraph2 {
-    background-color: #ffffff;
-    border: 4px solid #2f7d2f;    /* green border */
-    padding: 18px 22px;
-    width: 60%;                    
-    line-height: 1.6;              
-}
-
-/* blue paragraphs 4 and 5 reused */
-.blue {
-    background-color: #001a80;     /* blue color */
-    color: #ffffff;
-    padding: 12px 10px;
-    margin: 10px 0;
-    border: 2px solid #0b2a8f;     /* darker*/
-}
-
-/* 
-   - list item links are blue, 3schools link is a different color  */
-a {
-    color: #1b47a6;
-}
-
-a:visited {
-    color: #4b2a86;
-}
-
-a[href*="w3schools"] {
-    color: #9a1f1f;               /* different color */
-}
-
-a[href*="w3schools"]:visited {
-    color: #7a1515;
-}
-
-/* ordered list, 2 digits*/
-ol {
-    list-style-type: decimal-leading-zero;
-    margin-left: 28px;
-    padding-left: 0;
-}
-
-ol li {
-    margin: 2px 0;
+  background-color: #d3a01d;
+  padding: 20px 14px;           /*self note: inital size issue */
 }
 
 
-table {
-    border-collapse: collapse;     /* makes borders overlap */
-    margin-top: 6px;
-    font-size: 13px;
+
+#jumpMenu h2 {
+  margin: 0 0 20px 0;
+  font-size: 32px;
 }
 
-th, td {
-    border: 1px solid #666666;
-    padding: 6px 10px;
-    vertical-align: top;
+#jumpMenu a {
+  display: block;
+  margin: 10px 0;            /* self note: article link spacing was due to this margin being too high   */
+
+  font-size: 20px;
+  color: blue;
+  text-decoration: underline;
 }
 
-th {
-    background-color: #d9d9d9;     /* grey header*/
-    font-weight: 800;
+/* main content */
+main {
+  margin-left: var(--jump-width);
+  padding-top: var(--header-height);
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-td {
-    background-color: #ffffff;     /* white body*/
+/* header */
+main > header {
+  position: fixed;
+  top: 0;
+  left: var(--jump-width);
+  width: calc(100% - var(--jump-width));
+  height: var(--header-height);
+
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+/* Red title bar */
+main > header > p {
+  margin: 0;
+  height: 70px;
+
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+}
+
+/* navigation buttons */
+main > header > nav {
+  height: 50px;
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+main > header button {
+  width: 240px;
+  height: 36px;
+
+  background-color: blue;
+  color: white;
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+/* page title*/
+main > h1 {
+  text-align: center;
+  font-size: 54px;
+  margin: 30px 0;
+}
+
+/*journal articles layout*/
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+  padding-bottom: 120px;
+}
+
+#container article {
+  width: 300px;
+}
+
+#container article h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+#container article p {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+#container article a {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* thank you box */ 
+
+#thanks {
+  position: fixed;
+  right: 5px;
+  bottom: -25px;    /* negative value to get all way to bottom right*/
+
+  background-color: #8ecbff;
+  border: 2px solid black;
+  padding: 16px 22px;           /* size*/
+
+  font-size: 32px;  
+  font-weight: bold;
+}
+
+/* footer*/
+footer {
+  margin-top: 40px;
+}
+
+footer p {
+  font-size: 22px;
+  font-weight: bold;
 }
